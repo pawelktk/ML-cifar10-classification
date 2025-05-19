@@ -1,0 +1,87 @@
+{
+    "name": "Mobilenet Transfer",
+    "accuracy": 0.2393,
+    "loss": 2.0768,
+    "precision": 0.0,
+    "recall": 0.0,
+    "training_time": 131.5,
+    "training_config": "{'epochs': 15, 'batch_size': 32, 'learning_rate': 0.0001, 'early_stopping': True, 'reduce_lr': True}",
+    "learning_curve": "results/mobilenet_transfer_learning_curve.png",
+    "confusion_matrix": "results/mobilenet_transfer_confusion_matrix.png",
+    "architecture": "Model z transfer learning z u\u017cyciem MobileNetV2 jako ekstraktora cech.",
+    "classification_report": {
+        "0": {
+            "precision": 0.16318537859007834,
+            "recall": 0.125,
+            "f1-score": 0.14156285390713477,
+            "support": 1000.0
+        },
+        "1": {
+            "precision": 0.2782386726228462,
+            "recall": 0.436,
+            "f1-score": 0.33969614335800546,
+            "support": 1000.0
+        },
+        "2": {
+            "precision": 0.1536697247706422,
+            "recall": 0.067,
+            "f1-score": 0.09331476323119778,
+            "support": 1000.0
+        },
+        "3": {
+            "precision": 0.0625,
+            "recall": 0.001,
+            "f1-score": 0.001968503937007874,
+            "support": 1000.0
+        },
+        "4": {
+            "precision": 0.21847762928529924,
+            "recall": 0.376,
+            "f1-score": 0.27636898199191473,
+            "support": 1000.0
+        },
+        "5": {
+            "precision": 0.24667472793228537,
+            "recall": 0.408,
+            "f1-score": 0.30746043707611154,
+            "support": 1000.0
+        },
+        "6": {
+            "precision": 0.2708192281651997,
+            "recall": 0.4,
+            "f1-score": 0.3229713362939039,
+            "support": 1000.0
+        },
+        "7": {
+            "precision": 0.16552901023890784,
+            "recall": 0.097,
+            "f1-score": 0.1223203026481715,
+            "support": 1000.0
+        },
+        "8": {
+            "precision": 0.3142589118198874,
+            "recall": 0.335,
+            "f1-score": 0.324298160696999,
+            "support": 1000.0
+        },
+        "9": {
+            "precision": 0.20815752461322082,
+            "recall": 0.148,
+            "f1-score": 0.17299824663939217,
+            "support": 1000.0
+        },
+        "accuracy": 0.2393,
+        "macro avg": {
+            "precision": 0.2081510808038367,
+            "recall": 0.2393,
+            "f1-score": 0.21029597297798386,
+            "support": 10000.0
+        },
+        "weighted avg": {
+            "precision": 0.2081510808038367,
+            "recall": 0.2393,
+            "f1-score": 0.2102959729779839,
+            "support": 10000.0
+        }
+    }
+}

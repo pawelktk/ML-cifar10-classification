@@ -1,0 +1,87 @@
+{
+    "name": "Batchnorm Cnn",
+    "accuracy": 0.6998,
+    "loss": 0.8947,
+    "precision": 0.7672,
+    "recall": 0.6339,
+    "training_time": 36.1,
+    "training_config": "{'epochs': 25, 'batch_size': 128, 'learning_rate': 0.002, 'early_stopping': True, 'reduce_lr': True}",
+    "learning_curve": "results/batchnorm_cnn_learning_curve.png",
+    "confusion_matrix": "results/batchnorm_cnn_confusion_matrix.png",
+    "architecture": "CNN z warstwami Batch Normalization dla poprawy stabilno\u015bci uczenia.",
+    "classification_report": {
+        "0": {
+            "precision": 0.7207472959685349,
+            "recall": 0.733,
+            "f1-score": 0.7268220128904314,
+            "support": 1000.0
+        },
+        "1": {
+            "precision": 0.7059282371294852,
+            "recall": 0.905,
+            "f1-score": 0.7931638913234005,
+            "support": 1000.0
+        },
+        "2": {
+            "precision": 0.567713004484305,
+            "recall": 0.633,
+            "f1-score": 0.5985815602836879,
+            "support": 1000.0
+        },
+        "3": {
+            "precision": 0.5648854961832062,
+            "recall": 0.444,
+            "f1-score": 0.49720044792833146,
+            "support": 1000.0
+        },
+        "4": {
+            "precision": 0.6401151631477927,
+            "recall": 0.667,
+            "f1-score": 0.653281096963761,
+            "support": 1000.0
+        },
+        "5": {
+            "precision": 0.6188212927756654,
+            "recall": 0.651,
+            "f1-score": 0.6345029239766082,
+            "support": 1000.0
+        },
+        "6": {
+            "precision": 0.6887254901960784,
+            "recall": 0.843,
+            "f1-score": 0.7580935251798561,
+            "support": 1000.0
+        },
+        "7": {
+            "precision": 0.8590852904820766,
+            "recall": 0.695,
+            "f1-score": 0.7683803206191266,
+            "support": 1000.0
+        },
+        "8": {
+            "precision": 0.8554641598119859,
+            "recall": 0.728,
+            "f1-score": 0.7866018368449487,
+            "support": 1000.0
+        },
+        "9": {
+            "precision": 0.8503649635036497,
+            "recall": 0.699,
+            "f1-score": 0.7672886937431395,
+            "support": 1000.0
+        },
+        "accuracy": 0.6998,
+        "macro avg": {
+            "precision": 0.707185039368278,
+            "recall": 0.6998,
+            "f1-score": 0.6983916309753291,
+            "support": 10000.0
+        },
+        "weighted avg": {
+            "precision": 0.707185039368278,
+            "recall": 0.6998,
+            "f1-score": 0.6983916309753292,
+            "support": 10000.0
+        }
+    }
+}

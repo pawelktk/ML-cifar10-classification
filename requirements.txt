@@ -1,0 +1,10 @@
+flask>=2.0.0
+werkzeug>=2.0.0
+pillow>=8.0.0
+tensorflow>=2.0
+matplotlib
+seaborn
+scikit-learn
+jinja2
+numpy
+numpy>=1.20.0

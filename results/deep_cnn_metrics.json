@@ -1,0 +1,87 @@
+{
+    "name": "Deep Cnn",
+    "accuracy": 0.7416,
+    "loss": 0.747,
+    "precision": 0.8126,
+    "recall": 0.6802,
+    "training_time": 63.5,
+    "training_config": "{'epochs': 30, 'batch_size': 64, 'learning_rate': 0.0005, 'early_stopping': True, 'reduce_lr': True}",
+    "learning_curve": "results/deep_cnn_learning_curve.png",
+    "confusion_matrix": "results/deep_cnn_confusion_matrix.png",
+    "architecture": "G\u0142\u0119boka sie\u0107 CNN z trzema warstwami konwolucyjnymi i du\u017c\u0105 liczb\u0105 neuron\u00f3w.",
+    "classification_report": {
+        "0": {
+            "precision": 0.7840909090909091,
+            "recall": 0.759,
+            "f1-score": 0.7713414634146342,
+            "support": 1000.0
+        },
+        "1": {
+            "precision": 0.8900862068965517,
+            "recall": 0.826,
+            "f1-score": 0.8568464730290456,
+            "support": 1000.0
+        },
+        "2": {
+            "precision": 0.605724838411819,
+            "recall": 0.656,
+            "f1-score": 0.6298607777244359,
+            "support": 1000.0
+        },
+        "3": {
+            "precision": 0.550561797752809,
+            "recall": 0.588,
+            "f1-score": 0.5686653771760155,
+            "support": 1000.0
+        },
+        "4": {
+            "precision": 0.6997929606625258,
+            "recall": 0.676,
+            "f1-score": 0.6876907426246185,
+            "support": 1000.0
+        },
+        "5": {
+            "precision": 0.7135980746089049,
+            "recall": 0.593,
+            "f1-score": 0.6477334789732386,
+            "support": 1000.0
+        },
+        "6": {
+            "precision": 0.7331628303495311,
+            "recall": 0.86,
+            "f1-score": 0.791532443626323,
+            "support": 1000.0
+        },
+        "7": {
+            "precision": 0.8266522210184182,
+            "recall": 0.763,
+            "f1-score": 0.7935517420696828,
+            "support": 1000.0
+        },
+        "8": {
+            "precision": 0.8608515057113187,
+            "recall": 0.829,
+            "f1-score": 0.8446255731023943,
+            "support": 1000.0
+        },
+        "9": {
+            "precision": 0.7894257064721969,
+            "recall": 0.866,
+            "f1-score": 0.8259418216499762,
+            "support": 1000.0
+        },
+        "accuracy": 0.7416,
+        "macro avg": {
+            "precision": 0.7453947050974985,
+            "recall": 0.7415999999999999,
+            "f1-score": 0.7417789893390364,
+            "support": 10000.0
+        },
+        "weighted avg": {
+            "precision": 0.7453947050974985,
+            "recall": 0.7416,
+            "f1-score": 0.7417789893390363,
+            "support": 10000.0
+        }
+    }
+}

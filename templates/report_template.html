@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Raport końcowy - Klasyfikacja obrazów</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    h1, h2 { color: #2c3e50; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 30px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    img { max-width: 500px; margin: 10px 0; }
+.report-table th {
+    background-color: #f8f9fa;
+    position: sticky;
+    top: 0;
+}
+.config-cell {
+    font-family: monospace;
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+}
+  </style>
+</head>
+<body>
+  <h1>Raport końcowy - Klasyfikacja obrazów</h1>
+  <p><strong>Cel projektu:</strong> {{ description }}</p>
+
+  {% for model in models %}
+    <h2>{{ model.name }}</h2>
+    <p><strong>Architektura:</strong> {{ model.architecture }}</p>
+    <p><strong>Dokładność testowa:</strong> {{ model.accuracy }}</p>
+    <p><strong>Funkcja straty:</strong> {{ model.loss }}</p>
+    <img src="{{ model.learning_curve }}" alt="Learning Curve">
+    <img src="{{ model.confusion_matrix }}" alt="Confusion Matrix">
+  {% endfor %}
+
+  <h2>Porównanie modeli</h2>
+  <table>
+    <tr>
+      <th>Model</th><th>Accuracy</th><th>Loss</th>
+    </tr>
+    {% for model in models %}
+    <tr>
+      <td>{{ model.name }}</td><td>{{ model.accuracy }}</td><td>{{ model.loss }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h2>Wybór najlepszego modelu</h2>
+  <p>{{ best_model_explanation }}</p>
+
+
+
+<table class="table table-striped report-table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Model</th>
+            <th>Accuracy</th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>Training Time</th>
+            <th>Training Config</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for model in models %}
+        <tr>
+            <td>{{ model.name }}</td>
+            <td>{{ "%.2f"|format(model.accuracy * 100) }}%</td>
+            <td>{{ "%.2f"|format(model.precision * 100) }}%</td>
+            <td>{{ "%.2f"|format(model.recall * 100) }}%</td>
+            <td>{{ model.training_time }}s</td>
+            <td class="config-cell">{{ model.training_config }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% for model in models %}
+<div class="card mb-4">
+    <div class="card-header">
+        <h3>{{ model.name }} - Detailed Report</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Learning Curves</h4>
+                <img src="{{ model.learning_curve }}" class="img-fluid" alt="Learning Curve">
+            </div>
+            <div class="col-md-6">
+                <h4>Confusion Matrix</h4>
+                <img src="{{ model.confusion_matrix }}" class="img-fluid" alt="Confusion Matrix">
+            </div>
+        </div>
+        
+        <div class="mt-4">
+            <h4>Classification Metrics</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>F1-Score</th>
+                        <th>Support</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for class_name, metrics in model.classification_report.items() %}
+                    {% if class_name not in ['accuracy', 'macro avg', 'weighted avg'] %}
+                    <tr>
+                        <td>{{ class_name }}</td>
+                        <td>{{ "%.2f"|format(metrics.precision * 100) }}%</td>
+                        <td>{{ "%.2f"|format(metrics.recall * 100) }}%</td>
+                        <td>{{ "%.2f"|format(metrics['f1-score'] * 100) }}%</td>
+                        <td>{{ metrics.support }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+</body>
+</html>
